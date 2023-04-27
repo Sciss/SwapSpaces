@@ -15,7 +15,7 @@ lazy val root = project.in(file("."))
     licenses     := Seq("AGPL v3+" -> url("http://www.gnu.org/licenses/agpl-3.0.txt")),
     scalaVersion := "3.2.2",
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-encoding", "utf8"),
-    resolvers    += "imagej.releases" at "https://maven.scijava.org/content/repositories/releases/",
+//    resolvers    += "imagej.releases" at "https://maven.scijava.org/content/repositories/releases/",
     libraryDependencies ++= Seq(
       "com.jhlabs"          %  "filters"              % deps.main.jhlabs,       // image composites
       "de.sciss"            %% "fileutil"             % deps.main.fileUtil,     // utility functions

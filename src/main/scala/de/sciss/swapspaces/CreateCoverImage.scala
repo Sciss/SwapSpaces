@@ -43,7 +43,7 @@ object CreateCoverImage {
     val fileInGray  = dirInGray  / f"swap-spaces-cover-$imageIdx%03d.jpg"
     val fileInColor = dirInColor / f"swap-spaces-cover-$imageIdx%03dc-low.jpg"
     val fileOut     = dirOut     / f"swap-spaces-cover-$imageIdx%03dc.jpg"
-    if (fileOut.exists()) {
+    if fileOut.exists() then {
       println(s"File ${fileOut.name} already exists. Not overwriting!")
       return
     }
@@ -120,7 +120,7 @@ object CreateCoverImage {
       res
     }
 
-    if (verbose) {
+    if verbose then {
       println(s"Scaled input size ${imgInC.getWidth}, ${imgInC.getHeight}")
     }
 
@@ -128,7 +128,7 @@ object CreateCoverImage {
   }
 
   def ensureType(in: BufferedImage, tpe: Int): BufferedImage =
-    if (in.getType == tpe) in else copyImage(in, tpe)
+    if in.getType == tpe then in else copyImage(in, tpe)
 
   def copyImage(in: BufferedImage, tpe: Int): BufferedImage = {
     val b = new BufferedImage(in.getWidth, in.getHeight, tpe)
@@ -153,7 +153,7 @@ object CreateCoverImage {
 
     val imgOutT = ensureRGB(imgOut)
     val it = ImageIO.getImageWriters(ImageTypeSpecifier.createFromRenderedImage(imgOutT), fmtOut)
-    if (!it.hasNext) throw new IllegalArgumentException(s"No image writer for $fmtOut")
+    if !it.hasNext then throw new IllegalArgumentException(s"No image writer for $fmtOut")
     val imgWriter = it.next()
     fileOut.delete()
     val fos = new FileImageOutputStream(fileOut)
