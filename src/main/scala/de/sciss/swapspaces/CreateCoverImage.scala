@@ -16,10 +16,6 @@ package de.sciss.swapspaces
 import com.jhlabs.composite.{ColorComposite, DifferenceComposite}
 import com.jhlabs.image.NoiseFilter
 import de.sciss.file.*
-import ij.ImagePlus
-import ij.io.FileInfo
-import ij.process.ImageProcessor
-import mpicbg.ij.InverseTransformMapping
 
 import java.awt.image.BufferedImage
 import java.awt.{Graphics2D, RenderingHints}
