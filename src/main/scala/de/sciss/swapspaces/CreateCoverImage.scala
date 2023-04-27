@@ -30,7 +30,7 @@ import scala.util.control.NonFatal
 object CreateCoverImage {
   def main(args: Array[String]): Unit = {
     implicit val config: Config = Config()
-    for imageIdx <- 1 to 255 do {
+    for imageIdx <- 1 to 250 do {
       run(imageIdx)
     }
   }
